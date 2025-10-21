@@ -1,14 +1,13 @@
 package racingcar.config;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import racingcar.Car;
 import racingcar.UserInput;
 
 public class RacingGameConfig {
-    private Map<Long, Car> cars = new LinkedHashMap<>();
+    private List<Car> cars = new ArrayList<>();
     private int tryCount = 0;
     CarNameValidator carNameValidator = new CarNameValidator(cars);
 
@@ -17,7 +16,7 @@ public class RacingGameConfig {
         this.tryCount = Integer.parseInt(userInput.tryCount());
     }
 
-    public Map<Long, Car> getCars() {
+    public List<Car> getCars() {
         return cars;
     }
 
@@ -25,12 +24,12 @@ public class RacingGameConfig {
         return tryCount;
     }
 
-    private Map<Long, Car> parseCarNames(String userInputCarNames) {
+    private List<Car> parseCarNames(String userInputCarNames) {
         List<String> carNameList = Arrays.stream(userInputCarNames.split(",")).map(String::strip).toList();
         long id = 1L;
         for (String name : carNameList) {
             carNameValidator.validate(name);
-            cars.put(id++, new Car(name));
+            cars.add(new Car(name));
         }
         return cars;
     }

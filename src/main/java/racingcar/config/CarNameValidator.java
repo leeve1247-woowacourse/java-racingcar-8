@@ -1,9 +1,9 @@
 package racingcar.config;
 
-import java.util.Map;
+import java.util.List;
 import racingcar.Car;
 
-public record CarNameValidator(Map<Long, Car> cars) {
+public record CarNameValidator(List<Car> cars) {
     private static final int MaxCarNameLength = 5;
 
     public void validate(String name) {
@@ -26,7 +26,7 @@ public record CarNameValidator(Map<Long, Car> cars) {
 
 
     private void validateDuplicate(String name) {
-        if (cars.values().stream().anyMatch(car -> car.getName().equals(name))) {
+        if (cars.stream().anyMatch(car -> car.getName().equals(name))) {
             throw new IllegalArgumentException("Duplicate car names are not allowed.");
         }
     }
