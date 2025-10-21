@@ -13,7 +13,7 @@ public class RacingGameConfig {
 
     public RacingGameConfig(UserInput userInput) {
         this.cars = parseCarNames(userInput.carNames());
-        this.tryCount = Integer.parseInt(userInput.tryCount());
+        this.tryCount = parseTryCount(userInput);
     }
 
     public List<Car> getCars() {
@@ -26,11 +26,22 @@ public class RacingGameConfig {
 
     private List<Car> parseCarNames(String userInputCarNames) {
         List<String> carNameList = Arrays.stream(userInputCarNames.split(",")).map(String::strip).toList();
-        long id = 1L;
         for (String name : carNameList) {
             carNameValidator.validate(name);
             cars.add(new Car(name));
         }
         return cars;
+    }
+
+    private int parseTryCount(UserInput userInput) {
+        int tryCount = Integer.parseInt(userInput.tryCount());
+        validatePositiveNum(tryCount);
+        return tryCount;
+    }
+
+    private void validatePositiveNum(int tryCount) {
+        if (tryCount <= 0) {
+            throw new IllegalArgumentException("Number of tries must be a positive integer.");
+        }
     }
 }

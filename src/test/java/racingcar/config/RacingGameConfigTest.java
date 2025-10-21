@@ -45,6 +45,14 @@ class RacingGameConfigTest {
     }
 
     @Test
+    void 음수_시행_횟수(){
+        UserInput userInput = new UserInput("AA,BB", "-1");
+        assertThrows(IllegalArgumentException.class, () -> {
+            new RacingGameConfig(userInput);
+        });
+    }
+
+    @Test
     void 다섯자_초과_차_이름() {
         UserInput userInput = new UserInput("AAAAAA", "1");
         assertThrows(IllegalArgumentException.class, () -> {
