@@ -1,6 +1,7 @@
 package racingcar;
 
 import java.util.List;
+import racingcar.config.RacingGameConfig;
 import racingcar.view.ConsoleView;
 
 public class Application {
