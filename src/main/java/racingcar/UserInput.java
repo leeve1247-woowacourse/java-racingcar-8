@@ -1,4 +1,4 @@
 package racingcar;
 
-public class UserInput {
+public record UserInput(String carNames, String tryCount) {
 }
