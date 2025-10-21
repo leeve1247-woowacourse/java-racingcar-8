@@ -9,6 +9,7 @@ import racingcar.model.UserInput;
 public class RacingGameConfig {
     private List<Car> cars = new ArrayList<>();
     CarNameValidator carNameValidator = new CarNameValidator(cars);
+    TryCountValidator tryCountValidator = new TryCountValidator();
     private int tryCount = 0;
 
     public RacingGameConfig(UserInput userInput) {
@@ -35,13 +36,7 @@ public class RacingGameConfig {
 
     private int parseTryCount(UserInput userInput) {
         int tryCount = Integer.parseInt(userInput.tryCount());
-        validatePositiveNum(tryCount);
+        tryCountValidator.validate(tryCount);
         return tryCount;
-    }
-
-    private void validatePositiveNum(int tryCount) {
-        if (tryCount <= 0) {
-            throw new IllegalArgumentException("Number of tries must be a positive integer.");
-        }
     }
 }
