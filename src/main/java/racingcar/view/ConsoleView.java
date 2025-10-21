@@ -1,7 +1,7 @@
 package racingcar.view;
 
-import racingcar.RaceRecord;
-import racingcar.UserInput;
+import racingcar.model.RaceRecord;
+import racingcar.model.UserInput;
 
 public class ConsoleView {
     private final InputView inputView;

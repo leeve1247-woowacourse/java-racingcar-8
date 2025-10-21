@@ -1,6 +1,8 @@
 package racingcar;
 
 import racingcar.config.RacingGameConfig;
+import racingcar.model.RaceRecord;
+import racingcar.model.UserInput;
 import racingcar.view.ConsoleView;
 
 public class Application {

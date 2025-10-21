@@ -2,7 +2,7 @@ package racingcar.view;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.util.NoSuchElementException;
-import racingcar.UserInput;
+import racingcar.model.UserInput;
 
 public class InputView {
     public String readCarNames() {

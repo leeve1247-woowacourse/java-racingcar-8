@@ -3,8 +3,8 @@ package racingcar.config;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import racingcar.Car;
-import racingcar.UserInput;
+import racingcar.model.Car;
+import racingcar.model.UserInput;
 
 public class RacingGameConfig {
     private List<Car> cars = new ArrayList<>();

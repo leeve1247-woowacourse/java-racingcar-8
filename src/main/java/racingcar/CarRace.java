@@ -4,6 +4,9 @@ import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
 import racingcar.config.RacingGameConfig;
+import racingcar.model.Car;
+import racingcar.model.RaceRecord;
+import racingcar.model.Round;
 import racingcar.view.ConsoleView;
 
 public class CarRace {

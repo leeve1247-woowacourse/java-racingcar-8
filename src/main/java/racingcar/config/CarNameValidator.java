@@ -1,7 +1,7 @@
 package racingcar.config;
 
 import java.util.List;
-import racingcar.Car;
+import racingcar.model.Car;
 
 public record CarNameValidator(List<Car> cars) {
     private static final int MaxCarNameLength = 5;
