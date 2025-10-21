@@ -1,6 +1,6 @@
 package racingcar.view;
 
-import java.util.List;
+import racingcar.RaceRecord;
 import racingcar.UserInput;
 
 public class ConsoleView {
@@ -16,7 +16,8 @@ public class ConsoleView {
         return inputView.readUserInput();
     }
 
-    public void printResult(List<String> winners) {
-        outputView.printResult(winners);
+    public void printResult(RaceRecord raceRecord) {
+        outputView.print(raceRecord.rounds());
+        outputView.printResult(raceRecord.winners());
     }
 }
