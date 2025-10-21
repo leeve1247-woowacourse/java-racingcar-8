@@ -13,9 +13,10 @@ public class ConsoleView {
     }
 
     public UserInput getUserInput() {
-        return new UserInput();
+        return inputView.readUserInput();
     }
 
     public void printResult(List<String> winners) {
+        outputView.printResult(winners);
     }
 }
