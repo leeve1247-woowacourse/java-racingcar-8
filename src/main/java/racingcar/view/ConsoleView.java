@@ -7,7 +7,7 @@ public class ConsoleView {
     private final InputView inputView;
     private final OutputView outputView;
 
-    public ConsoleView(){
+    public ConsoleView() {
         this.inputView = new InputView();
         this.outputView = new OutputView();
     }

@@ -8,8 +8,8 @@ import racingcar.model.UserInput;
 
 public class RacingGameConfig {
     private List<Car> cars = new ArrayList<>();
-    private int tryCount = 0;
     CarNameValidator carNameValidator = new CarNameValidator(cars);
+    private int tryCount = 0;
 
     public RacingGameConfig(UserInput userInput) {
         this.cars = parseCarNames(userInput.carNames());
