@@ -3,6 +3,8 @@ package racingcar.config;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import racingcar.config.validate.CarNameValidator;
+import racingcar.config.validate.TryCountValidator;
 import racingcar.model.Car;
 import racingcar.model.UserInput;
 

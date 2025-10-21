@@ -1,4 +1,4 @@
-package racingcar.config;
+package racingcar.config.validate;
 
 import java.util.List;
 import racingcar.model.Car;

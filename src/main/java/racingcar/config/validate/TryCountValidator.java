@@ -1,4 +1,4 @@
-package racingcar.config;
+package racingcar.config.validate;
 
 public class TryCountValidator {
     public void validate(int tryCount) {
