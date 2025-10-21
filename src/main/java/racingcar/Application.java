@@ -1,6 +1,5 @@
 package racingcar;
 
-import java.util.List;
 import racingcar.config.RacingGameConfig;
 import racingcar.view.ConsoleView;
 
@@ -10,7 +9,7 @@ public class Application {
         UserInput userInput = consoleView.getUserInput();
         RacingGameConfig racingGameConfig = new RacingGameConfig(userInput);
         CarRace carRace = new CarRace(racingGameConfig);
-        List<String> winners = carRace.play(consoleView);
-        consoleView.printResult(winners);
+        RaceRecord raceRecord = carRace.play(consoleView);
+        consoleView.printResult(raceRecord);
     }
 }
