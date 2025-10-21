@@ -1,20 +1,13 @@
 package racingcar.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Round {
-    private final List<Car> cars = new ArrayList<>();
-
+public record Round(List<Car> cars) {
     public Round(List<Car> cars) {
-        cars.forEach(this::deepCopy);
+        this.cars = cars.stream().map(this::deepCopy).toList();
     }
 
-    private void deepCopy(Car car) {
-        this.cars.add(new Car(car.getName(), car.getPosition()));
-    }
-
-    public List<Car> getCars() {
-        return cars;
+    private Car deepCopy(Car car) {
+        return new Car(car.getName(), car.getPosition());
     }
 }

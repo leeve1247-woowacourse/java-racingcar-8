@@ -13,7 +13,7 @@ public class OutputView {
     public void print(List<Round> rounds) {
         System.out.println("실행 결과");
         for (Round round : rounds) {
-            printRound(round.getCars());
+            printRound(round.cars());
             System.out.println();
         }
     }
