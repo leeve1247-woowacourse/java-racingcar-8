@@ -1,6 +1,6 @@
 package racingcar.config.validate;
 
-public class TryCountValidator {
+public record TryCountValidator() {
     public void validate(int tryCount) {
         validatePositiveNum(tryCount);
     }
