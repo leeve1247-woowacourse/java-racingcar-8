@@ -1,6 +1,7 @@
 package racingcar.config;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -28,8 +29,9 @@ class RacingGameConfigTest {
             new RacingGameConfig(userInput);
         });
     }
+
     @Test
-    void 공백_차_와_일반_차(){
+    void 공백_차_와_일반_차() {
         UserInput userInput = new UserInput(",aaron", "1");
         assertThrows(IllegalArgumentException.class, () -> {
             new RacingGameConfig(userInput);
@@ -45,7 +47,7 @@ class RacingGameConfigTest {
     }
 
     @Test
-    void 음수_시행_횟수(){
+    void 음수_시행_횟수() {
         UserInput userInput = new UserInput("AA,BB", "-1");
         assertThrows(IllegalArgumentException.class, () -> {
             new RacingGameConfig(userInput);
