@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 class ApplicationTest extends NsTest {
     private static final int MOVING_FORWARD = 4;
     private static final int STOP = 3;
+    private final TestUtil testUtil = new TestUtil();
+
 
     @Test
     void 기능_테스트() {
@@ -21,6 +23,18 @@ class ApplicationTest extends NsTest {
                     assertThat(output()).contains("pobi : -", "woni : ", "최종 우승자 : pobi");
                 },
                 MOVING_FORWARD, STOP
+        );
+    }
+
+    @Test
+    void 기능_테스트_2() {
+        int valueOrder = 0;
+        assertRandomNumberInRangeTest(
+                () -> {
+                    run("pobi,woni", "1");
+                    assertThat(output()).contains("pobi : -", "woni : ", "최종 우승자 : pobi");
+                },
+                MOVING_FORWARD, testUtil.movementPattern(valueOrder)
         );
     }
 
