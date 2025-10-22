@@ -61,4 +61,12 @@ class RacingGameConfigTest {
             new RacingGameConfig(userInput);
         });
     }
+
+    @Test
+    void 다섯자_초과_차_이름_2() {
+        UserInput userInput = new UserInput("pobi,javaji", "1");
+        assertThrows(IllegalArgumentException.class, () -> {
+            new RacingGameConfig(userInput);
+        });
+    }
 }
