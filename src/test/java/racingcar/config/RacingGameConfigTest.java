@@ -23,6 +23,13 @@ class RacingGameConfigTest {
     }
 
     @Test
+    void 특수문자를_포함한_차() {
+        UserInput userInput = new UserInput("A*!?1", "1");
+        RacingGameConfig racingGameConfig = new RacingGameConfig(userInput);
+        assertEquals(1, racingGameConfig.getCars().size());
+    }
+
+    @Test
     void 빈_차_이름() {
         UserInput userInput = new UserInput("", "1");
         assertThrows(IllegalArgumentException.class, () -> {

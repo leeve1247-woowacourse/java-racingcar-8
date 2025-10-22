@@ -4,7 +4,9 @@ import java.util.List;
 
 public record Round(List<Car> cars) {
     public Round(List<Car> cars) {
-        this.cars = cars.stream().map(this::deepCopy).toList();
+        this.cars = cars.stream()
+                .map(this::deepCopy)
+                .toList();
     }
 
     private Car deepCopy(Car car) {
